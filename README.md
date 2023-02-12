@@ -66,7 +66,7 @@ model = tf.keras.models.Sequential([
 
 model.compile(
     optimizer='adam', #será visto depois
-    loss='binary_crossentropy', #será visto depois
+    loss='binary_crossentropy', #será visto depois, mas esta sendo usado pois a saída só ira aceitar dois valores diferentes (0 ou 1)
     metrics=['accuracy'] #lista de métricas usadas, accuracy = correct/total
 )
 
