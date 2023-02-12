@@ -30,5 +30,8 @@
 > Aprendizagem de máquina é um subcampo da Engenharia e da ciência da computação que evoluiu do estudo de reconhecimento de padrões e da teoria do aprendizado computacional em inteligência artificial. Em 1959, Arthur Samuel definiu aprendizado de máquina como o "campo de estudo que dá aos computadores a habilidade de aprender sem serem explicitamente programados"  
 
 ### Aprendizado de Máquina não é nada mais do que um problema geométrico <a name="o_que_é_ml_sub"></a>
-- Um estatístico diria: Aprendizado de Máquina é apenas um ajuste de curva glorificado (regressão linear/polinomial). 
-- 
+- Um estatístico diria: Aprendizado de Máquina é apenas um ajuste de curva glorificado (regressão polinomial). 
+    - Ajuste de curva (regressão): método que consiste em encontrar uma curva que se ajuste a uma série de pontos.
+- Tanto regressão quanto classificação são exemplos de aprendizado supervisionado 
+    - Regressão: prever um número. Em regressão, nós tentamos achar uma curva que mais se aproxime aos pontos passados.
+    - Classificação: prever uma categoria. Em classificação, nós procuramos uma curva que separe os pontos em grupos.
