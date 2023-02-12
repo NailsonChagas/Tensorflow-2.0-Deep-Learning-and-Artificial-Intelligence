@@ -7,11 +7,23 @@
 Obs: Como o github não suporta o uso de expressões matemáticas utilizando LaTeX, algumas partes do README estarão legíveis apenas na pré visualização no VS Code, foi convertido o markdown para pdf para que se possa ler as fórmulas porem há erros de formatação.
 
 ## Index
-1. [ Datasets usados no curso. ](#datasets)
-2. [ O que é Aprendizado de Máquina? ](#o_que_é_ml)
+1. [ Comandos importantes ](#comandos)
+1. [ Habilitando GPU Cuda sem docker ](#cuda)
+2. [ Datasets usados no curso ](#datasets)
+3. [ O que é Aprendizado de Máquina? ](#o_que_é_ml)
     1. [ Aprendizado de Máquina não é nada mais do que um problema geométrico ](#o_que_é_ml_sub)
-3. [ Teoria de Classificação Linear ](#teoria_class_lin)
-    
+4. [ Teoria de Classificação Linear ](#teoria_class_lin)
+
+## Comandos importantes <a name="comandos"></a>
+- ```python3 -m venv venv```
+- ```source ./venv/bin/activate```
+- ```pip install -r requirements.txt```
+- Se quiser rodar com a GPU via docker (Não funciona com venv): ```tensorman run --gpu python ./arquivo.py```
+
+## Habilitando GPU Cuda sem docker <a name="cuda"></a>
+0. Checar se driver esta instalado: ```nvidia-smi```
+1. ```sudo apt-get -y install nvidia-cuda-toolkit```
+2. ```sudo apt-get -y install nvidia-cudnn```
 
 ## Datasets usados no curso <a name="datasets"></a>
 **Obs:** Retirados do link -> https://docs.google.com/document/d/1S7fAvk-MTUymxVB-FpG-fwlx6qR0ziNmK2Wp1BQbpzE/edit
