@@ -51,5 +51,3 @@ Se $ a \geq 0 \implies $ Classe 1
 Se $ a < 0 \implies $ Classe 0   
 </br> Matemáticamente podemos encapsular esse processo de decisão em uma função de Heaviside (função degrau: assume valor 0 ou 1): $$(4)\ \^{y} = u(a), a =  w_1*x_1 + w_2*x_2 + b $$ Como em Deep Learn nós preferimos utilizar funções mais suaves e diferenciaveis, é utilizada uma função Sigmoide (função logística: assume valores entre 0 e 1): $$(5)\ \^{y} = \sigma(a), a =  w_1*x_1 + w_2*x_2 + b $$ com $\^{y}$ da equação (5) podendo ser interpretado como a probabilidade de que: $$p(y = 1 | x) = \sigma(w_1*x_1 + w_2*x_2 + b), \ ou \ seja, y = 1 \ dado \ x$$ Com o resultado da probabilidade podemos: </br> - Se $ p(y = 1 | x) \geq 0 \implies $ prever 1, se não 0 </br>
 Quando aplicamos uma função Sigmoide em cima de uma função linear, nós chamamos o modelo de Regressão Logística, e o argumento de uma função Sigmoide é chamado de ativação.
-
-\sigma $\sigma$
