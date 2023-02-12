@@ -6,9 +6,10 @@
 
 ## Index
 1. [ Datasets usados no curso. ](#datasets)
-2. 
+2. [ O que é Aprendizado de Máquina? ](#o_que_é_ml)
+    1. [ Aprendizado de Máquina não é nada mais do que um problema geométrico ](#o_que_é_ml_sub)
 
-## Datasets usados no curso: <a name="datasets"></a>
+## Datasets usados no curso <a name="datasets"></a>
 **Obs:** Retirados do link -> https://docs.google.com/document/d/1S7fAvk-MTUymxVB-FpG-fwlx6qR0ziNmK2Wp1BQbpzE/edit
 - Colab Basics:
     - Arrhythmia: https://archive.ics.uci.edu/ml/datasets/Arrhythmia
@@ -25,3 +26,9 @@
 - Transfer Learning:
     - _: https://lazyprogrammer.me/course_files/Food-5K.zip
 
+## O que é Aprendizado de Máquina? <a name="o_que_é_ml"></a>
+> Aprendizagem de máquina é um subcampo da Engenharia e da ciência da computação que evoluiu do estudo de reconhecimento de padrões e da teoria do aprendizado computacional em inteligência artificial. Em 1959, Arthur Samuel definiu aprendizado de máquina como o "campo de estudo que dá aos computadores a habilidade de aprender sem serem explicitamente programados"  
+
+### Aprendizado de Máquina não é nada mais do que um problema geométrico <a name="o_que_é_ml_sub"></a>
+- Um estatístico diria: Aprendizado de Máquina é apenas um ajuste de curva glorificado (regressão linear/polinomial). 
+- 
