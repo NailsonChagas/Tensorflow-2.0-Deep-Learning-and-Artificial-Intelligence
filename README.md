@@ -4,6 +4,8 @@
 **Exercícios:** https://github.com/lazyprogrammer/machine_learning_examples/blob/master/tf2.0/exercises.txt    
 **Github:** https://github.com/lazyprogrammer/machine_learning_examples/tree/master/tf2.0    
 
+Obs: Como o github não suporta o uso de expressões matemáticas utilizando LaTeX, algumas partes do README estarão legíveis apenas na pré visualização no VS Code.
+
 ## Index
 1. [ Datasets usados no curso. ](#datasets)
 2. [ O que é Aprendizado de Máquina? ](#o_que_é_ml)
