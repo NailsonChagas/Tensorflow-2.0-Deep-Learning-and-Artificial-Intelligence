@@ -1,7 +1,7 @@
 # Tensorflow 2.0: Deep Learning and Artificial Intelligence
 **Anotações do curso:** https://www.udemy.com/course/deep-learning-tensorflow-2/  
 **Códigos do curso:** https://deeplearningcourses.com/notebooks/JhnnzH3atbHGlhWYYwfCog    
-**Exercicios:** https://github.com/lazyprogrammer/machine_learning_examples/blob/master/tf2.0/exercises.txt    
+**Exercícios:** https://github.com/lazyprogrammer/machine_learning_examples/blob/master/tf2.0/exercises.txt    
 **Github:** https://github.com/lazyprogrammer/machine_learning_examples/tree/master/tf2.0    
 
 ## Index
