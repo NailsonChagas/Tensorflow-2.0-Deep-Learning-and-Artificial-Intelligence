@@ -21,9 +21,7 @@ Obs: Como o github não suporta o uso de expressões matemáticas utilizando LaT
 - Se quiser rodar com a GPU via docker (Não funciona com venv): ```tensorman run --gpu python ./arquivo.py```
 
 ## Habilitando GPU Cuda sem docker <a name="cuda"></a>
-0. Checar se driver esta instalado: ```nvidia-smi```
-1. ```sudo apt-get -y install nvidia-cuda-toolkit```
-2. ```sudo apt-get -y install nvidia-cudnn```
+- https://www.tensorflow.org/install/gpu?hl=pt-br
 
 ## Datasets usados no curso <a name="datasets"></a>
 **Obs:** Retirados do link -> https://docs.google.com/document/d/1S7fAvk-MTUymxVB-FpG-fwlx6qR0ziNmK2Wp1BQbpzE/edit
