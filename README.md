@@ -1,7 +1,14 @@
 # Tensorflow 2.0: Deep Learning and Artificial Intelligence
 **Anotações do curso:** https://www.udemy.com/course/deep-learning-tensorflow-2/  
+**Códigos do curso:** https://deeplearningcourses.com/notebooks/JhnnzH3atbHGlhWYYwfCog    
+**Exercicios:** https://github.com/lazyprogrammer/machine_learning_examples/blob/master/tf2.0/exercises.txt    
+**Github:** https://github.com/lazyprogrammer/machine_learning_examples/tree/master/tf2.0    
 
-## Datasets usados no curso:
+## Index
+1. [ Datasets usados no curso. ](#datasets)
+2. 
+
+## Datasets usados no curso: <a name="datasets"></a>
 **Obs:** Retirados do link -> https://docs.google.com/document/d/1S7fAvk-MTUymxVB-FpG-fwlx6qR0ziNmK2Wp1BQbpzE/edit
 - Colab Basics:
     - Arrhythmia: https://archive.ics.uci.edu/ml/datasets/Arrhythmia
