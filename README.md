@@ -91,3 +91,6 @@ r = model.fit(
 plt.plot(r.history['loss'], label='loss')
 plt.plot(r.history['val_loss'], label='val_loss')
 ```
+
+Para olhar o código funcionado, usar o script classification na pasta ML and Neurons.  
+
