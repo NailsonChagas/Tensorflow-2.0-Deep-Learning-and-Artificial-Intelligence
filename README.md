@@ -14,6 +14,10 @@ Obs: Como o github não suporta o uso de expressões matemáticas utilizando LaT
     1. [ Aprendizado de Máquina não é nada mais do que um problema geométrico ](#o_que_é_ml_sub)
 4. [ Teoria de Classificação Linear ](#teoria_class_lin)
 5. [ Teoria de Regressão Linear ](#teoria_regre_lin)
+6. [ O Neurônio ](#neuronio)
+    1. [ Como isso é relacionado com um neurônio? ](#neuronio_1)
+    2. [ Rede neural artificial ](#neuronio_2)
+    3. [ Como o modelo aprende? ](#neuronio_3)
 
 ## Comandos importantes <a name="comandos"></a>
 - ```python3 -m venv venv```
@@ -118,3 +122,39 @@ model.compile(
 ```
 
 Em regressão o uso da acurácia não faz sentido pois ela quase sempre seria 0. No caso da regressão faz mais sentido utilizar a medida estatística $R^2$ (coeficiente de determinação)
+
+## O Neurônio <a name="neuronio"></a>
+Chamamos regressão logistica de neurônio, com um neurônio sendo a base fundamental de uma rede neural. 
+$$\^{y} = \sigma( \sum\limits_{d=1}^D w_d * x_d + b) $$
+Com cada $x_d$ sendo uma característica, é possível afirmar que seu peso $w_d$ diz o quão importante essa característica é para predizer a saída.  
+
+### Como isso é relacionado com um neurônio? <a name="neuronio_1"></a>
+Os neurônios têm um papel essencial na determinação do funcionamento e comportamento do corpo humano e do raciocínio. Eles são formados pelos dendritos, que são um conjunto de terminais de entrada, pelo corpo central, e pelos axônios que são longos terminais de saída.
+
+Neurônios se comunicam através de sinapses. Sinapse é a região onde dois neurônios entram em contato e através da qual os impulsos nervosos são transmitidos entre eles. Os impulsos recebidos por um neurônio A, em um determinado momento, são processados, e atingindo um dado limiar de ação, o neurônio A dispara, produzindo uma substância neuro transmissora que flui do corpo celular para o axônio, que pode estar conectado a um dendrito de um outro neurônio B. O neuro transmissor pode diminuir ou aumentar a polaridade da membrana pós-sináptica, inibindo ou excitando a geração dos pulsos no neurônio B. Este processo depende de vários fatores, como a geometria da sinapse e o tipo de neuro transmissor.    
+
+Tendo essas inforamações, é possível fazer algumas suposições básicas:
+- A atividade de um neurônio é um processo tudo ou nada (binário).
+- Um certo número fixo (>1) de entradas devem ser excitadas dentro de um período de adição latente para excitar um neurônio.
+- Único atraso significativo é o atraso sináptico.
+- A atividade de qualquer sinapse inibitória previne absolutamente a excitação do neurônio.
+- A estrutura das interconexões não muda com o tempo.
+
+Através dessas suposições, pode-se representar um neoronio artificial através do algoritmo de Regressão Logistica: $$ \^{y} = \sigma( \sum\limits_{d=1}^D w_d * x_d + b) $$ Com os n elementos do vetor $x$ sendo as entradas (dendritos) do neuronio, $\^{y}$ sendo o terminal de saída (axônio), os elementos do vetor $w$ descrevendo o comportamentos das sinapses, $w_d * x_d$ o efeito da sinapse e $b$ representando o bias (Tendência).
+
+### Rede neural artificial <a name="neuronio_2"></a>
+Uma rede neural artificial é composta por várias unidades de processamento (neurônios), cujo funcionamento é bastante simples. Essas unidades, geralmente são conectadas por canais de comunicação que estão associados a determinado peso. As unidades fazem operações apenas sobre seus dados locais, que são entradas recebidas pelas suas conexões. O comportamento inteligente de uma Rede Neural Artificial vem das interações entre as unidades de processamento da rede.
+
+A maioria dos modelos de redes neurais possui alguma regra de treinamento, onde os pesos de suas conexões são ajustados de acordo com os padrões apresentados. Em outras palavras, elas aprendem através de exemplos.
+
+Arquiteturas neurais são tipicamente organizadas em camadas, com unidades que podem estar conectadas às unidades da camada posterior.
+
+Usualmente as camadas são classificadas em três grupos:
+- Camada de Entrada: onde os padrões são apresentados à rede.
+- Camadas Intermediárias ou Escondidas: Onde é feita a maior parte do processamento, através das conexões ponderadas; podem ser consideradas como extratoras de características.
+- Camada de Saída: onde o resultado final é concluído e apresentado.
+
+### Como o modelo aprende? <a name="neuronio_3"></a>
+Uma rede neural aprende calculando os pesos de cada característica, em cada neurônio.
+O Tensorflow ira fazer todas as diferenciações para calcular os pesos com menores custos, sendo preciso selecionar apenas a taxa de aprendizado.
+Obs: Para escolher a taxa de aprendizado, normalmente, tentar potencias de 10 (0.1, 0.01, 0.001, ...)
