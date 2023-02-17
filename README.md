@@ -13,6 +13,7 @@ Obs: Como o github não suporta o uso de expressões matemáticas utilizando LaT
 3. [ O que é Aprendizado de Máquina? ](#o_que_é_ml)
     1. [ Aprendizado de Máquina não é nada mais do que um problema geométrico ](#o_que_é_ml_sub)
 4. [ Teoria de Classificação Linear ](#teoria_class_lin)
+5. [ Teoria de Regressão Linear ](#teoria_regre_lin)
 
 ## Comandos importantes <a name="comandos"></a>
 - ```python3 -m venv venv```
@@ -68,29 +69,52 @@ p(y=1 | x) = \sigma(w^T*x + b) = \sigma( \sum\limits_{d=1}^D w_d * x_d + b)
 $$ Mas como podemos implementar, o que vimos até agora no Tensorflow?
 - A expressão $w^T*x + b$ é implementada através da função: ```tf.keras.layers.Dense(output_size)```
 - Para podermos implementar esse modelo utilizaremos dois layers:</br> 
-```
-model = tf.keras.models.Sequential([
-    tf.keras.layers.Input(shape=(D,)), #basicamente falando para o keras o tamanho do vetor de entrada x
-    tf.keras.layers.Dense(1, activation='sigmoid') #especificar o tamanho de saida e função de ativação
-])
+    ```
+    model = tf.keras.models.Sequential([
+        tf.keras.layers.Input(shape=(D,)), #basicamente falando para o keras o tamanho do vetor de entrada x
+        tf.keras.layers.Dense(1, activation='sigmoid') #especificar o tamanho de saida e função de ativação
+    ])
 
-model.compile(
-    optimizer='adam', #será visto depois
-    loss='binary_crossentropy', #será visto depois, mas esta sendo usado pois a saída só ira aceitar dois valores diferentes (0 ou 1)
-    metrics=['accuracy'] #lista de métricas usadas, accuracy = correct/total
-)
+    model.compile(
+        optimizer='adam', #será visto depois
+        loss='binary_crossentropy', #será visto depois, mas esta sendo usado pois a saída só ira aceitar dois valores diferentes (0 ou 1)
+        metrics=['accuracy'] #lista de métricas usadas, accuracy = correct/total
+    )
 
-r = model.fit(
-    X_train, y_train,
-    validation_data=(X_test, y_test),
-    epochs=100 #numero de iterações para calculo dos pesos (vetor w)
-)
+    r = model.fit(
+        X_train, y_train,
+        validation_data=(X_test, y_test),
+        epochs=100 #numero de iterações para calculo dos pesos (vetor w)
+    )
 
-# Visualiar a função de perda e outras métricas ao passar das iterações
-# Com isso podemos avaliar se precisamos de mais epochs ou alterar outros hiper parametros
-plt.plot(r.history['loss'], label='loss')
-plt.plot(r.history['val_loss'], label='val_loss')
-```
+    # Visualiar a função de perda e outras métricas ao passar das iterações
+    # Com isso podemos avaliar se precisamos de mais epochs ou alterar outros hiper parametros
+    plt.plot(r.history['loss'], label='loss')
+    plt.plot(r.history['val_loss'], label='val_loss')
+    ```
 
 Para olhar o código funcionado, usar o script classification na pasta ML and Neurons.  
 
+
+## Teoria de Regressão Linear <a name="teoria_regre_lin"></a>
+Obs: Para facilitar o exemplo lida só com regressão linear. 
+> Em estatística ou econometria, regressão linear é uma equação para se estimar a condicional (valor esperado) de uma variável y, dados os valores de algumas outras variáveis x. A regressão, em geral, tem como objetivo tratar de um valor que não se consegue estimar inicialmente. A regressão linear é chamada "linear" porque se considera que a relação da resposta às variáveis é uma função linear de alguns parâmetros. 
+
+- 1 entrada: $$ \^{y} = mx+b $$
+- Multiplas entradas: $$ \^{y} =  \sum\limits_{d=1}^D w_d * x_d + b = w^T*x + b $$
+
+Diferente da classificação, a regressão, devido a sua saída poder assumir "qualquer" valor, não necessita de uma função de ativação (ex: sigmoide)
+
+```
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Input(shape=(D,)),
+    tf.keras.layers.Dense(1, activation=None)
+])
+
+model.compile(
+    optimizer = tf.keras.optimizers.SGD(0.001, 0.9), #escolhido no lugar do adam pois esse performou melhor nesse caso
+    loss = 'mse' #como a saida não é binária (mse = mean square erro)
+)
+```
+
+Em regressão o uso da acurácia não faz sentido pois ela quase sempre seria 0. No caso da regressão faz mais sentido utilizar a medida estatística $R^2$ (coeficiente de determinação)
